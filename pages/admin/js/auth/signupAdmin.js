@@ -3,32 +3,38 @@
 const inputNom = document.getElementById("NomInput");
 const inputPreNom = document.getElementById("PrenomInput");
 
-const inputMail = document.getElementById("EmailInput");
-const inputPassword = document.getElementById("PasswordInput");
-const inputValidationPassword = document.getElementById("ValidatePasswordInput");
-const btnValidation = document.getElementById("btn-validation-inscription");
-const formInscription = document.getElementById("formulaireInscription");
+const inputAdminMail = document.getElementById("EmailAdminInput");
+const inputAdminPassword = document.getElementById("PasswordAdminInput");
+const inputAdminValidationPassword = document.getElementById("ValidateAdminPasswordInput");
+
+const btnValidationInscriptionAdmin = document.getElementById("btnValidationInscriptionAdmin");
+
+const formInscriptionAdmin = document.getElementById("formulaireInscriptionAdmin");
 
 inputNom.addEventListener("keyup", validateForm); 
 inputPreNom.addEventListener("keyup", validateForm);
-inputMail.addEventListener("keyup", validateForm);
-inputPassword.addEventListener("keyup", validateForm);
-inputValidationPassword.addEventListener("keyup", validateForm);
 
-btnValidation.addEventListener("click", inscrireUtilisateur);
+inputAdminMail.addEventListener("keyup", validateForm);
+inputAdminPassword.addEventListener("keyup", validateForm);
+inputAdminValidationPassword.addEventListener("keyup", validateForm);
+
+btnValidationInscriptionAdmin.addEventListener("click", inscrireUtilisateur);
 
 //Function permettant de valider tout le formulaire
+
 function validateForm(){
+
     const nomOk = validateRequired(inputNom);
     const prenomOk = validateRequired(inputPreNom);
-    const mailOk = validateMail(inputMail);
-    const passwordOk = validatePassword(inputPassword)
-    const validationPasswordOk = validatePasswordEntry(inputPassword, inputValidationPassword);
+
+    const mailOk = validateMail(inputAdminMail);
+    const passwordOk = validatePassword(inputAdminPassword)
+    const validationPasswordOk = validatePasswordEntry(inputAdminPassword, inputAdminValidationPassword);
 
     if (nomOk && prenomOk && mailOk && passwordOk && validationPasswordOk) {
-        btnValidation.disabled = false;
+        btnValidationInscriptionAdmin.disabled = false;
     } else {
-        btnValidation.disabled = true;
+        btnValidationInscriptionAdmin.disabled = true;
     }
 }
 
@@ -98,7 +104,7 @@ function inscrireUtilisateur() {
     // Pour le faire, on untilise l'objet javascript formdata
     // qui est l'objet pour loisiblement, récupérer les données depuis un formulaire, de part les attributs name
 
-    const dataform = new FormData(formInscription);
+    const dataform = new FormData(formInscriptionAdmin);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -133,8 +139,8 @@ function inscrireUtilisateur() {
     })
 
     .then(result => {
-        alert("Super, inscription réussie");
-        document.location.href = "/signin";
+        alert("Super, inscription ok");
+        document.location.href = "/admin";
 
     })
     

@@ -1,10 +1,7 @@
 //Implémenter le JS de laa page
 
-const inputNom = document.getElementById("NomInput");
-const inputPreNom = document.getElementById("PrenomInput");
-
-const inputMail = document.getElementById("EmailInput");
-const inputPassword = document.getElementById("PasswordInput");
+const inputMailEmploye = document.getElementById("EmailEmployeInput");
+const inputPasswordEmploye = document.getElementById("PasswordInput");
 const inputValidationPassword = document.getElementById("ValidatePasswordInput");
 const btnValidation = document.getElementById("btn-validation-inscription");
 const formInscription = document.getElementById("formulaireInscription");
@@ -134,7 +131,7 @@ function inscrireUtilisateur() {
 
     .then(result => {
         alert("Super, inscription réussie");
-        document.location.href = "/signin";
+        document.location.href = "/signinEmploye";
 
     })
     

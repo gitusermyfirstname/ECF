@@ -1,0 +1,34 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Inscrire un employé</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <form id="signinForm">
+        <div class="mb-3">
+          <label for="EmailEmployeInput" class="form-label">Email de l'employé</label>
+          <input type="email" class="form-control" id="EmailEmployeInput" placeholder="test@email.com" name="email">
+        
+          <div class="invalid-feedback">
+            Le mail n'est pas Ok
+          </div>
+        
+        </div>
+
+        <div class="mb-3">
+          <label for="PasswordInput" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="PasswordInput" name="mdp">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" id="btnSigninEmploye">Inscrire l'employé</button>
+        </div>        
+    </form>
+
+    <div class="text-center pt-3">
+        <a href="/admin">Retourner sur le dashboad</a>
+    </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Admin Connexion</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <form id="signinAdminForm">
+        <div class="mb-3">
+          <label for="EmailAdminInput" class="form-label">Email Admin</label>
+          <input type="email" class="form-control" id="EmailAdminInput" placeholder="admin@gmail.com" name="email">
+        
+          <div class="invalid-feedback">
+            Le mail et le mot de passe ne matchent pas
+          </div>
+        
+        </div>
+
+        <div class="mb-3">
+          <label for="PasswordAdminInput" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="PasswordAdminInput" name="mdp">
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" id="btnSigninAdmin">Admin Connexion</button>
+        </div>        
+    </form>
+
+    <div class="text-center pt-3">
+        <a href="/signupAdmin">Vous n’avez pas de compte administrateur ? Créer un compte administrateur ici</a>
+    </div>
+
+</div>

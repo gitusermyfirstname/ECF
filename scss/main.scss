@@ -62,12 +62,6 @@ p {
     text-align: justify;
 }
 
-// .image-card img {
-
-//    width: 408px;
-//    height: 200px;
-// }
-
 .image-card {
     position: relative;
 
@@ -129,4 +123,15 @@ p {
 
 .icn {
     font-size: 151px;
+}
+
+.carteDeModification {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actionList li{
+    list-style: none;
+    padding-left: 0px;
 }
