@@ -27,3 +27,34 @@ apprecierEspece3.addEventListener('click', () => {
 function newFunction() {
     return val + 1;
 }
+
+// Edition d'un titre
+
+const titreCardInput = document.getElementById("TitreDeLHabitatMiseAJourInput");
+
+const titreDesMarais = document.getElementById("titreDesMarais");
+
+// const btnEditCardDesMarais = document.getElementById(btnEditCardDesMarais);
+
+const btnEditIcn = document.getElementById("btnEditIcn");
+
+btnEditIcn.onclick = editTitreCard();
+
+function editTitreCard() {
+
+    function recuperationDesEntrees() {
+        const btnEditCardDesMarais = document.getElementById(btnEditCardDesMarais);
+        // console.log("okClick");
+        
+        //nous attendons la résolution de la fonction asynchrone maFonctionRetournantUnePromesse()
+      }
+
+    // const btnEditCardDesMarais = document.getElementById(btnEditCardDesMarais);
+    // console.log("ok");
+    //return input.value;
+}
+
+
+function myFunction() {
+  document.getElementById("titreDesMarais").innerHTML = titreCardInput.value;
+}

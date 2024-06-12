@@ -60,9 +60,10 @@ p {
 .text-justify {
 
     text-align: justify;
+    
 }
 
-.image-card {
+.img-card {
     position: relative;
 
     &:hover {
@@ -96,7 +97,7 @@ p {
         top: 0;
         left: 0;
         width: 100%;
-        padding: 5px;
+        padding: 20px;
         display: flex;
         justify-content: space-between;
         opacity: 0;
@@ -129,9 +130,20 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .actionList li{
     list-style: none;
     padding-left: 0px;
+}
+
+.inline {
+    display: inline;
+}
+
+.champ {
+    display: block;
+    width: 57%;
+    height: auto;
 }

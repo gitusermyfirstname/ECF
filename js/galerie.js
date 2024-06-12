@@ -1,6 +1,7 @@
 const galerieImgs = document.getElementById("ImgsGalerie");
 const titre = '<link rel="stylesheet" href="./test.html">';
 const imgSrc = "../imgs/platter-2009590_640.jpg";
+
 const imgs = getImgs(titre, imgSrc);
 
 galerieImgs.innerHTML = imgs;

@@ -60,7 +60,14 @@ function isConnected() {
     } else {
         return true;
     }
+}
 
+function isAdminConnected() {
+    if (getToken() == null || getToken == undefined) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 // if (isConnected()) {

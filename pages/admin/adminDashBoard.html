@@ -6,141 +6,152 @@
 
 <div class="container">
 
-    <div class="row row-cols-2 row-cols-lg-4">
-    
-      <div class="col p-3" class="carteDeModification">
+    <div class="row row-cols-1 row-cols-lg-4">
 
-        <div class="text-white" style="border: 1px solid orange;">
-            <img class="w-50 svg" src="../../imgs/user-line.svg" alt="">
-        </div>
+              <!-- carte d'action 1 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                    <div style="border: 1px solid orange;">
+                      <img class="w-75 bg-primary rounded" src="../../imgs/user-line.svg" alt="">
+                    </div>
 
-        <div class="col p-4">
-            <h4>Employé</h4>
-        </div>
+                    <div class="col p-4">
+                      <h4>Employé</h4>
+                    </div>
 
-        <div class="actionList">
-          <ul>
-            <li><a href="/signupEmploye"><span>Créer un compte employé</span></a></li>
-          </ul>
-
-        </div>
-
-
-      </div>
-
-      <div class="col p-3">
-        <div class="image-card text-white">
-            <img class="w-100 rounded" src="../imgs/prague-4484518_640.jpg" alt="">
-            <p class="titre-image">Visisite guidée Gratuite</p>
-            <div class="action-image-buttons" data-show="admin">
-                <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
-                <button type="button" class="btn btn-outline-primary"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
-            </div>
-        </div>
-        <div class="col p-4">
-            <h4>Visite gratuite d'Arcadia</h4>
-            <div class="text-center pt-4 ">
-              <button type="button" class="btn btn-outline-primary"><i class="bi bi-signpost-split icn"></i></button>
-            </div>
-        </div>
-      </div>
-
-      <div class="col p-3">
-        <div class="image-card text-white">
-            <img class="w-100 rounded" src="../imgs/huntington-train-2849502_640.jpg" alt="">
-            <p class="titre-image">Avoir plus d'infos</p>
-            <div class="action-image-buttons" data-show="admin">
-                <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
-                <button type="button" class="btn btn-outline-primary"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
-            </div>
-        </div>
-        <div class="col p-4">
-            <h4>Visiter Arcadia sur les rails</h4>
-            <div class="text-center pt-4 ">
-              <button type="button" class="btn btn-outline-primary"><i class="bi bi-train-lightrail-front-fill icn rounded-circle"></i></i></button>
-            </div>
-        </div>
-      </div>
-
-      <!-- Alert, si l'attribut data-show="admin" est masquée les btn d'étition le seront aussi-->
-      <!-- <div class="col p-3">
-          <div class="image-card text-white">
-              <img class="w-100 rounded" src="../imgs/FondHeroScene.jpg" alt="">
-              <p class="titre-image">Restauration</p>
-              <div class="action-image-buttons" data-show="admin"> 
-                  <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
-                  <button type="button" class="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
+                    <div>
+                      <ul>
+                        <li><a href="/signupEmploye"><span>Créer un compte employé</span></a></li>
+                      </ul>
+                    </div>
               </div>
-          </div>
-      </div> -->
 
-    </div>
-
-    <div class="text-center">
-        <a href="#" class="btn btn-primary">Réserver</a>
-    </div>
-
-</div>
-
-<!-- Modal édition -->
-
-<div class="modal fade" id="EditionPhotoModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionPhotoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-5" id="EditionPhotoModalLabel">Edition Photo</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-            <form>
-                <div class="mb-3">
-                  <label for="NamePhotoInput" class="form-label">Titre</label>
-                  <input type="text" class="form-control" id="NamePhotoInput" placeholder="gratin de pomme de terre">
+              <!-- carte d'action 2 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/user-3-line.svg" alt="">
                 </div>
-        
-                <div class="mb-3">
-                  <label for="ImgInput" class="form-label">Img</label>
-                  <input type="file" class="form-control" id="ImgInput">
+
+                <div class="col p-4">
+                  <h4>Vétérinaire</h4>
                 </div>
-        
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary">Enregistrer</button>
-                </div>        
-            </form>
 
-        </div>
-       
-      </div>
-    </div>
-</div>
-
-<!-- Modal suppression -->
-
-<div class="modal fade" id="DeletePhotoModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="DeletePhotoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-5" id="DeletePhotoModalLabel">Etes-vous sûr de la suppression la photo ?</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-            <form>
-                <div class="mb-3">
-                  <p>Titre</p>
-                  <img class="w-100 rounded" src="../imgs/restaurant-449952_640.jpg" alt="">
+                <div>
+                  <ul>
+                    <li><a href="/signupVeterinaire"><span>Créer un compte vétérinaire</span></a></li>
+                  </ul>
                 </div>
-        
-                <div class="text-center">
-                    <button type="button" class="btn btn-danger">Supprimer</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                </div>        
-            </form>
+              </div>
 
-        </div>
-       
-      </div>
+              <!-- carte d'action 3 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/train-fill.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Services</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/"><span>Modifier les services</span></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- carte d'action 4 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/calendar-line.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Horaires</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/signupEmploye"><span>Modifier les horaires</span></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- carte d'action 5 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/home-line.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Habitats</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/habitats"><span>Modifier les habitats</span></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- carte d'action 6 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/checkbox-circle-line.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Animaux</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/signupEmploye"><span>Modifier les animaux</span></a></li>      
+                  </ul>
+                </div>
+              </div>
+
+              <!-- carte d'action 7 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/sticky-note-line.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Comptes rendus du Vététinaire</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/signupEmploye">Tous les comptes rendus du vétérinaire</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- carte d'action 8 du dashboard de l'admin--> 
+              <div class="col p-3" class="carteDeModification">
+                  
+                <div style="border: 1px solid orange;">
+                  <img class="w-75 bg-primary rounded" src="../../imgs/bar-chart-box-line.svg" alt="">
+                </div>
+
+                <div class="col p-4">
+                  <h4>Clics sur les animaux</h4>
+                </div>
+
+                <div>
+                  <ul>
+                    <li><a href="/signupEmploye">Nombre consultation par animaux</a></li>
+                  </ul>
+                </div>
+              </div>
+
     </div>
-</div>
+
 </div>

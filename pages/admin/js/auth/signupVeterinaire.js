@@ -3,32 +3,38 @@
 const inputNom = document.getElementById("NomInput");
 const inputPreNom = document.getElementById("PrenomInput");
 
-const inputMail = document.getElementById("EmailInput");
-const inputPassword = document.getElementById("PasswordInput");
-const inputValidationPassword = document.getElementById("ValidatePasswordInput");
-const btnValidation = document.getElementById("btn-validation-inscription");
-const formInscription = document.getElementById("formulaireInscription");
+const inputVeterinaireMail = document.getElementById("EmailVeterinaireInput");
+const inputVeterinairePassword = document.getElementById("PasswordVeterinaireInput");
+const inputVeterinaireValidationPassword = document.getElementById("ValidateVeterinairePasswordInput");
+
+const btnValidationInscriptionVeterinaire = document.getElementById("btnValidationInscriptionVeterinaire");
+
+const formInscriptionVeterinaire = document.getElementById("formulaireInscriptionVeterinaire");
 
 inputNom.addEventListener("keyup", validateForm); 
 inputPreNom.addEventListener("keyup", validateForm);
-inputMail.addEventListener("keyup", validateForm);
-inputPassword.addEventListener("keyup", validateForm);
-inputValidationPassword.addEventListener("keyup", validateForm);
 
-btnValidation.addEventListener("click", inscrireUtilisateur);
+inputVeterinaireMail.addEventListener("keyup", validateForm);
+inputVeterinairePassword.addEventListener("keyup", validateForm);
+inputVeterinaireValidationPassword.addEventListener("keyup", validateForm);
+
+btnValidationInscriptionVeterinaire.addEventListener("click", inscrireUtilisateur);
 
 //Function permettant de valider tout le formulaire
-function validateForm() {
+
+function validateForm(){
+
     const nomOk = validateRequired(inputNom);
     const prenomOk = validateRequired(inputPreNom);
-    const mailOk = validateMail(inputMail);
-    const passwordOk = validatePassword(inputPassword)
-    const validationPasswordOk = validatePasswordEntry(inputPassword, inputValidationPassword);
+
+    const mailOk = validateMail(inputVeterinaireMail);
+    const passwordOk = validatePassword(inputVeterinairePassword)
+    const validationPasswordOk = validatePasswordEntry(inputVeterinairePassword, inputVeterinaireValidationPassword);
 
     if (nomOk && prenomOk && mailOk && passwordOk && validationPasswordOk) {
-        btnValidation.disabled = false;
+        btnValidationInscriptionVeterinaire.disabled = false;
     } else {
-        btnValidation.disabled = true;
+        btnValidationInscriptionVeterinaire.disabled = true;
     }
 }
 
@@ -98,7 +104,7 @@ function inscrireUtilisateur() {
     // Pour le faire, on untilise l'objet javascript formdata
     // qui est l'objet pour loisiblement, récupérer les données depuis un formulaire, de part les attributs name
 
-    const dataform = new FormData(formInscription);
+    const dataform = new FormData(formInscriptionVeterinaire);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -133,8 +139,8 @@ function inscrireUtilisateur() {
     })
 
     .then(result => {
-        alert("Super, inscription réussie");
-        document.location.href = "/signin";
+        alert("Super, inscription ok");
+        document.location.href = "/adminDashBoard";
 
     })
     

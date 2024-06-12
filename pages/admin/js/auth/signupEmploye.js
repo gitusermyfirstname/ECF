@@ -1,31 +1,40 @@
 //Implémenter le JS de laa page
 
-const inputMailEmploye = document.getElementById("EmailEmployeInput");
-const inputPasswordEmploye = document.getElementById("PasswordInput");
-const inputValidationPassword = document.getElementById("ValidatePasswordInput");
-const btnValidation = document.getElementById("btn-validation-inscription");
-const formInscription = document.getElementById("formulaireInscription");
+const inputNom = document.getElementById("NomInput");
+const inputPreNom = document.getElementById("PrenomInput");
+
+const inputEmployeMail = document.getElementById("EmailEmployeInput");
+const inputEmployePassword = document.getElementById("PasswordEmployeInput");
+const inputEmployeValidationPassword = document.getElementById("ValidateEmployePasswordInput");
+
+const btnValidationInscriptionEmploye = document.getElementById("btnValidationInscriptionEmploye");
+
+const formInscriptionEmploye = document.getElementById("formulaireInscriptionEmploye");
 
 inputNom.addEventListener("keyup", validateForm); 
 inputPreNom.addEventListener("keyup", validateForm);
-inputMail.addEventListener("keyup", validateForm);
-inputPassword.addEventListener("keyup", validateForm);
-inputValidationPassword.addEventListener("keyup", validateForm);
 
-btnValidation.addEventListener("click", inscrireUtilisateur);
+inputEmployeMail.addEventListener("keyup", validateForm);
+inputEmployePassword.addEventListener("keyup", validateForm);
+inputEmployeValidationPassword.addEventListener("keyup", validateForm);
+
+btnValidationInscriptionEmploye.addEventListener("click", inscrireUtilisateur);
 
 //Function permettant de valider tout le formulaire
+
 function validateForm(){
+
     const nomOk = validateRequired(inputNom);
     const prenomOk = validateRequired(inputPreNom);
-    const mailOk = validateMail(inputMail);
-    const passwordOk = validatePassword(inputPassword)
-    const validationPasswordOk = validatePasswordEntry(inputPassword, inputValidationPassword);
+
+    const mailOk = validateMail(inputEmployeMail);
+    const passwordOk = validatePassword(inputEmployePassword)
+    const validationPasswordOk = validatePasswordEntry(inputEmployePassword, inputEmployeValidationPassword);
 
     if (nomOk && prenomOk && mailOk && passwordOk && validationPasswordOk) {
-        btnValidation.disabled = false;
+        btnValidationInscriptionEmploye.disabled = false;
     } else {
-        btnValidation.disabled = true;
+        btnValidationInscriptionEmploye.disabled = true;
     }
 }
 
@@ -95,7 +104,7 @@ function inscrireUtilisateur() {
     // Pour le faire, on untilise l'objet javascript formdata
     // qui est l'objet pour loisiblement, récupérer les données depuis un formulaire, de part les attributs name
 
-    const dataform = new FormData(formInscription);
+    const dataform = new FormData(formInscriptionEmploye);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -130,8 +139,8 @@ function inscrireUtilisateur() {
     })
 
     .then(result => {
-        alert("Super, inscription réussie");
-        document.location.href = "/signinEmploye";
+        alert("Super, inscription ok");
+        document.location.href = "/adminDashBoard";
 
     })
     

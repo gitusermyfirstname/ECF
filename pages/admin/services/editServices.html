@@ -1,0 +1,41 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Edition des services</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row row-cols-2 p-3">
+        <!-- mettons à présent les img -->
+
+        <form id="formulaireDEditionDesServices">
+
+          <div class="mb-3 p-3">
+            <label class="form-label" for="selectService">Sélectionner le type service à éditer</label>
+            <select class="form-select" id="selectService">
+              <option>Restauration</option>
+              <option>La visite guidée gratuite</option>
+              <option>La visite sur les rails</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="descriptionService">La description du service</label>
+            <textarea class="form-control p-3" placeholder="description du service" id="descriptionService"></textarea>
+            
+            <div class="invalid-feedback">
+                Le champ est requis
+            </div>
+
+          </div>
+     
+                <div class="text-center p-3">
+                    <button type="button" class="btn btn-primary">Appliquer les modifications</button>
+                    <button type="button" class="btn btn-ligth" data-bs-dismiss="modal">Annuler</button>
+                </div>        
+            </form>
+
+        </div>
+       
+    </div>
