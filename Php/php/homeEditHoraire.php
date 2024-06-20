@@ -8,17 +8,15 @@ try {
     $PDO = new PDO($dsn, $username, $password);
     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $titre = $_POST['titreHabitatPrairiesDeMiseAJourInput'];
-    $description = $_POST['descriptionHabitatPrairiesDeMiseAJourInput'];
+    $horaire = $_POST['HoraireInput'];
 
     // putting
 
-    $insertQuery = "INSERT INTO habitat (name, description) VALUES (:titre, :description)";
+    $insertQuery = "INSERT INTO horaire (horaire) VALUES (:horaire)";
 
     $stmt = $PDO->prepare($insertQuery);
     
-    $stmt->bindParam(':titre', $titre);
-    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':horaire', $horaire);
 
     $stmt->execute();
     

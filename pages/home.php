@@ -19,17 +19,17 @@ try {
 
     // Habitats
 
-    //Marrais
-    $queryHabitatMarrais = "SELECT * FROM habitat where habitat_id = 1";
-    $stmtHabitatMarrais = $PDO->query($queryHabitatMarrais);
-    $habitatMarrais = $stmtHabitatMarrais->fetch(PDO::FETCH_ASSOC);
+    //Marais
+    $queryHabitatMarais = "SELECT * FROM habitat where habitat_id = (SELECT COUNT(*) from habitat)";
+    $stmtHabitatMarais = $PDO->query($queryHabitatMarais);
+    $habitatMarais = $stmtHabitatMarais->fetch(PDO::FETCH_ASSOC);
     // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Récupération
-    $titreHabitatMarrais = $habitatMarrais['name'];
-    $descriptionHabitatMarrais = $habitatMarrais['description'];
+    $titreHabitatMarais = $habitatMarais['name'];
+    $descriptionHabitatMarais = $habitatMarais['description'];
 
     //Forêts
-    $queryHabitatForêts = "SELECT * FROM habitat where habitat_id = 1";
+    $queryHabitatForêts = "SELECT * FROM habitat where habitat_id = (SELECT COUNT(*) from habitat)";
     $stmtHabitatForêts = $PDO->query($queryHabitatForêts);
     $habitatForêts = $stmtHabitatForêts->fetch(PDO::FETCH_ASSOC);
     // Récupération
@@ -37,7 +37,7 @@ try {
     $descriptionHabitatForêts = $habitatForêts['description'];
 
     //Forêts
-    $queryHabitatPrairie = "SELECT * FROM habitat where habitat_id = 1";
+    $queryHabitatPrairie = "SELECT * FROM habitat where habitat_id = (SELECT COUNT(*) from habitat)";
     $stmtHabitatPrairie = $PDO->query($queryHabitatPrairie);
     $habitatPrairie = $stmtHabitatPrairie->fetch(PDO::FETCH_ASSOC);
 
@@ -49,7 +49,7 @@ try {
 
     // Restauration
 
-    $queryServiceRestaurant = "SELECT * FROM service where service_id = 1";
+    $queryServiceRestaurant = "SELECT * FROM service where service_id = (SELECT COUNT(*) from service)";
     $stmtSerciceRestaurant = $PDO->query($queryServiceRestaurant);
     $serviceRestaurant = $stmtSerciceRestaurant->fetch(PDO::FETCH_ASSOC);
 
@@ -59,7 +59,7 @@ try {
 
     // Visite guidée gratuite
 
-    $queryServiceVisiteGuideeGratuite = "SELECT * FROM service where service_id = 1";
+    $queryServiceVisiteGuideeGratuite = "SELECT * FROM service where service_id = (SELECT COUNT(*) from service)";
     $stmtServiceVisiteGuideeGratuite = $PDO->query($queryServiceVisiteGuideeGratuite);
     $serviceVisiteGuideeGratuite = $stmtServiceVisiteGuideeGratuite->fetch(PDO::FETCH_ASSOC);
 
@@ -69,7 +69,7 @@ try {
 
     // Visite sur rails
 
-    $queryServiceVisiteSurRails = "SELECT * FROM service where service_id = 1";
+    $queryServiceVisiteSurRails = "SELECT * FROM service where service_id = (SELECT COUNT(*) from service)";
     $stmtServiceVisiteSurRails = $PDO->query($queryServiceVisiteSurRails);
     $serviceVisiteSurRails = $stmtServiceVisiteSurRails->fetch(PDO::FETCH_ASSOC);
 
@@ -78,6 +78,14 @@ try {
     $descriptionServiceVisiteSurRails = $serviceVisiteSurRails['description'];
 
 
+    // Horaire
+
+    $queryHoraire = "SELECT * FROM horaire where horaire_id = (SELECT COUNT(*) from horaire)";
+    $stmtHoraire = $PDO->query($queryHoraire);
+    $horaire = $stmtHoraire->fetch(PDO::FETCH_ASSOC);
+
+    // Récupération
+    $Newhoraire = $horaire['horaire'];
 
 } catch (PDOException $e) {
     echo "Erreur". $e;
@@ -100,7 +108,7 @@ try {
         </div>
     </article>
 
-    <!-- Marrais -->
+    <!-- Marais -->
 
     <article class="habitat">
         <div class="container p-4">
@@ -112,14 +120,14 @@ try {
                 <?php
 
                     echo '<h3 class="p-3 inline" id="titre">' .
-                                $titreHabitatMarrais .
+                                $titreHabitatMarais .
                             '</h3>
 
                             <div class="inline" data-show="">
-                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarrais"></i></button>
+                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarais"></i></button>
                             </div>
 
-                            <p class="text-justify p-3" id="descriptionHabitatMarraisDeMAJ">' . $descriptionHabitatMarrais . '</p>'
+                            <p class="text-justify p-3" id="descriptionHabitatMaraisDeMAJ">' . $descriptionHabitatMarais . '</p>'
 
                 ?>
 
@@ -132,7 +140,7 @@ try {
                         </div>
                 </h3> -->
 
-                    <!-- <p class="text-justify p-3" id="descriptionMarrais">
+                    <!-- <p class="text-justify p-3" id="descriptionMarais">
                         Les marais sont des zones humides qui peuvent être constituées d'eau marécageuse, douce ou plus ou moins salée. Ces marais représentent un grand intérêt pour les animaux. Avec leur dense végétation, les animaux peuvent s'y reproduire, s'y réfugier et y vivre tranquillement. On y retrouve :
                     </p> -->
                     
@@ -314,10 +322,10 @@ try {
                             '</h3>
 
                             <div class="inline" data-show="">
-                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarrais"></i></button>
+                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarais"></i></button>
                             </div>
 
-                            <p class="text-justify p-3" id="descriptionHabitatMarraisDeMAJ">' . $descriptionServiceVisiteGuideeGratuite . '</p>'
+                            <p class="text-justify p-3" id="descriptionHabitatMaraisDeMAJ">' . $descriptionServiceVisiteGuideeGratuite . '</p>'
 
                 ?>
 
@@ -535,7 +543,7 @@ try {
         
                 <div class="text-center">
                     <button type="button" class="btn btn-primary">Enregistrer</button>
-                </div>        
+                </div>
             </form>
 
         </div>
@@ -576,37 +584,37 @@ try {
 
 <!-- Edition des habitats -->
 
-<!-- Edit habitat Marrais -->
+<!-- Edit habitat Marais -->
 
-<div class="modal fade" id="editHabitatMarrais" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editHabitatMarraisLabel" aria-hidden="true">
+<div class="modal fade" id="editHabitatMarais" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editHabitatMaraisLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title fs-5" id="editHabitatMarraisLabel">Edition de l'habitat des Marrais</h2>
+          <h2 class="modal-title fs-5" id="editHabitatMaraisLabel">Edition de l'habitat des Marais</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditHabitatMarrais.php" method="post">
+            <form action="../Php/php/homeEditHabitatMarais.php" method="post">
                 <div class="mb-3">
-                  <label for="titreHabitatMarraisDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreHabitatMarraisDeMiseAJourInput" id="titreHabitatMarraisDeMiseAJourInput" placeholder="Marrais">
+                  <label for="titreHabitatMaraisDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
+                  <input type="text" class="form-control" name="titreHabitatMaraisDeMiseAJourInput" id="titreHabitatMaraisDeMiseAJourInput" placeholder="Marais" required>
                 </div>
         
                <div class="mb-3">
-                  <label for="descriptionHabitatMarraisDeMiseAJourInput" class="form-label">Description de mise à jour</label>
-                  <textarea class="champ" name="descriptionHabitatMarraisDeMiseAJourInput" placeholder="Description Marais" id="descriptionHabitatMarraisDeMiseAJourInput"></textarea>
+                  <label for="descriptionHabitatMaraisDeMiseAJourInput" class="form-label">Description de mise à jour</label>
+                  <textarea class="champ" name="descriptionHabitatMaraisDeMiseAJourInput" placeholder="Description Marais" id="descriptionHabitatMaraisDeMiseAJourInput" required></textarea>
                 </div>
 
 
-                <div id="ListeDesAnimauxDesMarrais">
+                <div id="ListeDesAnimauxDesMarais">
                     <ul>
                         <li></li>
                     </ul>
                 </div>
         
                 <div class="text-center">
-                    <input type="submit" class="btn btn-primary" id="btnEditHabitatMarrais" data-bs-dismiss="modal" value="Modifier">
+                    <input type="submit" class="btn btn-primary" id="btnEditHabitatMarais" data-bs-dismiss="modal" value="Modifier">
                 </div>
 
             </form>
@@ -629,15 +637,15 @@ try {
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditHabitatForêts.php" method="post">
+            <form action="../Php/php/homeEditHabitatForêts.php" method="post">
                 <div class="mb-3">
                   <label for="titreHabitatForêtsDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreHabitatForêtsDeMiseAJourInput" id="titreHabitatForêtsDeMiseAJourInput" placeholder="Forêts">
+                  <input type="text" class="form-control" name="titreHabitatForêtsDeMiseAJourInput" id="titreHabitatForêtsDeMiseAJourInput" placeholder="Forêts" required>
                 </div>
         
                <div class="mb-3">
                   <label for="descriptionHabitatForêtsDeMiseAJourInput" class="form-label">Description de mise à jour</label>
-                  <textarea class="champ" name="descriptionHabitatForêtsDeMiseAJourInput" placeholder="Description Forêts" id="descriptionHabitatForêtsDeMiseAJourInput"></textarea>
+                  <textarea class="champ" name="descriptionHabitatForêtsDeMiseAJourInput" placeholder="Description Forêts" id="descriptionHabitatForêtsDeMiseAJourInput" required></textarea>
                 </div>
 
 
@@ -671,15 +679,15 @@ try {
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditHabitatPrairies.php" method="post">
+            <form action="../Php/php/homeEditHabitatPrairies.php" method="post">
                 <div class="mb-3">
                   <label for="titreHabitatPrairiesDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreHabitatPrairiesDeMiseAJourInput" id="titreHabitatPrairiesDeMiseAJourInput" placeholder="Forêts">
+                  <input type="text" class="form-control" name="titreHabitatPrairiesDeMiseAJourInput" id="titreHabitatPrairiesDeMiseAJourInput" placeholder="Forêts" required>
                 </div>
         
                <div class="mb-3">
                   <label for="descriptionHabitatPrairiesDeMiseAJourInput" class="form-label">Description de mise à jour</label>
-                  <textarea class="champ" name="descriptionHabitatPrairiesDeMiseAJourInput" placeholder="Description Prairies" id="descriptionHabitatPrairiesDeMiseAJourInput"></textarea>
+                  <textarea class="champ" name="descriptionHabitatPrairiesDeMiseAJourInput" placeholder="Description Prairies" id="descriptionHabitatPrairiesDeMiseAJourInput" required></textarea>
                 </div>
 
 
@@ -715,15 +723,15 @@ try {
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditServiceRestaurant.php" method="post">
+            <form action="../Php/php/homeEditServiceRestaurant.php" method="post">
                 <div class="mb-3">
                   <label for="titreServiceRestaurantDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreServiceRestaurantDeMiseAJourInput" id="titreServiceRestaurantDeMiseAJourInput" placeholder="Restaurant">
+                  <input type="text" class="form-control" name="titreServiceRestaurantDeMiseAJourInput" id="titreServiceRestaurantDeMiseAJourInput" placeholder="Restaurant" required>
                 </div>
         
                <div class="mb-3">
                   <label for="descriptionServiceRestaurantDeMiseAJourInput" class="form-label">Description de mise à jour</label>
-                  <textarea class="champ" name="descriptionServiceRestaurantDeMiseAJourInput" placeholder="Description du service restaurant" id="descriptionServiceRestaurantDeMiseAJourInput"></textarea>
+                  <textarea class="champ" name="descriptionServiceRestaurantDeMiseAJourInput" placeholder="Description du service restaurant" id="descriptionServiceRestaurantDeMiseAJourInput" required></textarea>
                 </div>
         
                 <div class="text-center">
@@ -750,15 +758,15 @@ try {
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditServiceVisiteGuideeGratuite.php" method="post">
+            <form action="../Php/php/homeEditServiceVisiteGuideeGratuite.php" method="post">
                 <div class="mb-3">
                   <label for="titreServiceVisiteGuideeGratuiteDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreServiceVisiteGuideeGratuiteDeMiseAJourInput" id="titreServiceVisiteGuideeGratuiteDeMiseAJourInput" placeholder="Forêts">
+                  <input type="text" class="form-control" name="titreServiceVisiteGuideeGratuiteDeMiseAJourInput" id="titreServiceVisiteGuideeGratuiteDeMiseAJourInput" placeholder="Forêts" required>
                 </div>
         
                <div class="mb-3">
                   <label for="descriptionServiceVisiteGuideeGratuiteDeMiseAJourInput" class="form-label">Description du service de visite guidée gratuite</label>
-                  <textarea class="champ" name="descriptionServiceVisiteGuideeGratuiteDeMiseAJourInput" placeholder="Description de La visite guidée gratuite" id="descriptionServiceVisiteGuideeGratuiteDeMiseAJourInput"></textarea>
+                  <textarea class="champ" name="descriptionServiceVisiteGuideeGratuiteDeMiseAJourInput" placeholder="Description de La visite guidée gratuite" id="descriptionServiceVisiteGuideeGratuiteDeMiseAJourInput" required></textarea>
                 </div>
         
                 <div class="text-center">
@@ -785,15 +793,15 @@ try {
         </div>
         <div class="modal-body">
           
-            <form action="../Php/editionsAtHome/homeEditServiceVisiteSurRails.php" method="post">
+            <form action="../Php/php/homeEditServiceVisiteSurRails.php" method="post">
                 <div class="mb-3">
                   <label for="titreServiceVisiteSurRailsDeMiseAJourInput" class="form-label">Changer le titre ? Titre de mise à jour</label>
-                  <input type="text" class="form-control" name="titreServiceVisiteSurRailsDeMiseAJourInput" id="titreServiceVisiteSurRailsDeMiseAJourInput" placeholder="Visite sur rails">
+                  <input type="text" class="form-control" name="titreServiceVisiteSurRailsDeMiseAJourInput" id="titreServiceVisiteSurRailsDeMiseAJourInput" placeholder="Visite sur rails" required>
                 </div>
         
                <div class="mb-3">
                   <label for="descriptionServiceVisiteSurRailsDeMiseAJourInput" class="form-label">Description du service de visite guidée gratuite</label>
-                  <textarea class="champ" name="descriptionServiceVisiteSurRailsDeMiseAJourInput" placeholder="Description de La visite sur les rails" id="descriptionServiceVisiteSurRailsDeMiseAJourInput"></textarea>
+                  <textarea class="champ" name="descriptionServiceVisiteSurRailsDeMiseAJourInput" placeholder="Description de La visite sur les rails" id="descriptionServiceVisiteSurRailsDeMiseAJourInput" required></textarea>
                 </div>
         
                 <div class="text-center">
@@ -806,4 +814,33 @@ try {
        
       </div>
     </div>
+</div>
+
+
+<!-- Modal édition horaire -->
+
+            <div class="modal fade" id="EditionHoraire" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionHoraireLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditionHoraireLabel">Edition Photo</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+          <form action="./Php/php/homeEditHoraire.php" method="post">
+              <div class="mb-3">
+                <label for="HoraireInput" class="form-label">Horaire</label>
+                <input type="text" class="form-control" name="HoraireInput" id="HoraireInput" placeholder="Horaire" required>
+              </div>
+      
+              <div class="text-center">
+                  <button type="button" class="btn btn-primary">Enregistrer</button>
+              </div>        
+          </form>
+
+      </div>
+     
+    </div>
+  </div>
 </div>

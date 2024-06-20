@@ -8,8 +8,8 @@ try {
     $PDO = new PDO($dsn, $username, $password);
     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $titre = $_POST['titreHabitatMarraisDeMAJ'];
-    $description = $_POST['descriptionHabitatMarraisDeMAJ'];
+    $titre = $_POST['titreServiceRestaurantDeMiseAJourInput'];
+    $description = $_POST['descriptionServiceRestaurantDeMiseAJourInput'];
 
     // putting
 

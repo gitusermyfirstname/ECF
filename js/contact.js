@@ -1,40 +1,31 @@
 //Implémenter le JS de laa page
 
 const inputNom = document.getElementById("NomInput");
-const inputPreNom = document.getElementById("PrenomInput");
+const inputMail = document.getElementById("EmailInput");
+const mail = document.getElementById("mail");
 
-const inputEmployeMail = document.getElementById("EmailEmployeInput");
-const inputEmployePassword = document.getElementById("PasswordEmployeInput");
-const inputEmployeValidationPassword = document.getElementById("ValidateEmployePasswordInput");
+const btnContact = document.getElementById("btnContact");
 
-const btnValidationInscriptionEmploye = document.getElementById("btnValidationInscriptionEmploye");
-
-const formInscriptionEmploye = document.getElementById("formulaireInscriptionEmploye");
+const formInscriptionEmploye = document.getElementById("formulaireContact");
 
 inputNom.addEventListener("keyup", validateForm); 
-inputPreNom.addEventListener("keyup", validateForm);
+mail.addEventListener("keyup", validateForm);
+inputMail.addEventListener("keyup", validateForm);
 
-inputEmployeMail.addEventListener("keyup", validateForm);
-inputEmployePassword.addEventListener("keyup", validateForm);
-inputEmployeValidationPassword.addEventListener("keyup", validateForm);
-
-btnValidationInscriptionEmploye.addEventListener("click", inscrireUtilisateur);
+btnContact.addEventListener("click", validateForm);
 
 //Function permettant de valider tout le formulaire
 
 function validateForm(){
 
     const nomOk = validateRequired(inputNom);
-    const prenomOk = validateRequired(inputPreNom);
+    const inputMailOk = validateMail(inputMail);
+    const mailOk = validateRequired(mail);
 
-    const mailOk = validateMail(inputEmployeMail);
-    const passwordOk = validatePassword(inputEmployePassword)
-    const validationPasswordOk = validatePasswordEntry(inputEmployePassword, inputEmployeValidationPassword);
-
-    if (nomOk && prenomOk && mailOk && passwordOk && validationPasswordOk) {
-        btnValidationInscriptionEmploye.disabled = false;
+    if (nomOk && inputMailOk && mailOk && validationPasswordOk) {
+        //btnValidationInscriptionEmploye.disabled = false;
     } else {
-        btnValidationInscriptionEmploye.disabled = true;
+        //btnValidationInscriptionEmploye.disabled = true;
     }
 }
 

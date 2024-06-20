@@ -3,6 +3,7 @@
 // La methode setCookie va me permettre de placer le cookie en token
 
 const tokenCookieName = "accesstoken";
+
 // Je crée la constante Rôle,
 
 const roleCookieName = "Role";

@@ -8,8 +8,8 @@ try {
     $PDO = new PDO($dsn, $username, $password);
     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $titre = $_POST['titreHabitatPrairiesDeMiseAJourInput'];
-    $description = $_POST['descriptionHabitatPrairiesDeMiseAJourInput'];
+    $titre = $_POST['titreHabitatMaraisDeMiseAJourInput'];
+    $description = $_POST['descriptionHabitatMaraisDeMiseAJourInput'];
 
     // putting
 
@@ -26,7 +26,6 @@ try {
 
 } catch (PDOException $e) {
     echo "Exeption". $e;
-    //throw $th;
 }
 
 ?>

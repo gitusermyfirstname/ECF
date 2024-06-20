@@ -8,17 +8,20 @@ try {
     $PDO = new PDO($dsn, $username, $password);
     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $titre = $_POST['titreHabitatMarraisDeMiseAJourInput'];
-    $description = $_POST['descriptionHabitatMarraisDeMiseAJourInput'];
+    $titre = $_POST['name'];
+    $email = $_POST['EmailInput'];
+    $mail = $_POST['mail'];
+
 
     // putting
 
-    $insertQuery = "INSERT INTO habitat (name, description) VALUES (:titre, :description)";
+    $insertQuery = "INSERT INTO mail (titre, email, mail) VALUES (:titre, :email, :mail)";
 
     $stmt = $PDO->prepare($insertQuery);
     
     $stmt->bindParam(':titre', $titre);
-    $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':mail', $mail);
 
     $stmt->execute();
     
@@ -26,7 +29,6 @@ try {
 
 } catch (PDOException $e) {
     echo "Exeption". $e;
-    //throw $th;
 }
 
 ?>

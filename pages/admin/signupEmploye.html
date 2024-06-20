@@ -6,7 +6,11 @@
 
 <div class="container">
 
-  <form id="formulaireInscriptionEmploye">
+<form id="formulaireInscriptionEmploye" action="../../Php/php/envoyerMailLorsD_UnSignup.php" method="post">
+
+
+  <!-- <form id="formulaireInscriptionEmploye"> -->
+  <!-- <form id="formulaireInscriptionEmploye" action="../../Php/php/envoyerMailLorsD_UnSignup.php" method="post"> -->
 
     <div class="mb-3">
       <label for="NomInput" class="form-label">Nom</label>
@@ -14,7 +18,7 @@
       
       <div class="invalid-feedback">
           Le nom est requis
-      </div>
+    </div>
 
   </div>
 
@@ -66,12 +70,12 @@
     </div>
 
       <div class="text-center">
-          <button type="button" class="btn btn-primary" id="btnValidationInscriptionEmploye">Inscrire l'Employé</button>
+          <input type="submit" value="Envoyer" class="btn btn-primary" id="btnValidationInscriptionEmploye">
       </div>        
   </form>
 
   <div class="text-center pt-3">
-    <a href="/adminDashBoard">Retour sur le tableau de bord de l'administrateur</a>
+    <a href="../../Php/php/envoyerMailLorsD_UnSignup.php">Retour sur le tableau de bord de l'administrateur</a>
   </div>
 
 </div>

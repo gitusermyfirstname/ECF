@@ -13,8 +13,8 @@ export const allRoutes = [
 
     //Acadia
     
-    new Route("/contact", "Contact", "/pages/contact.html", []),
-    new Route("/services", "Services", "/pages/services.html", []),
+    new Route("/contact", "Contact", "/pages/contact.php", [], "/js/contact.js"),
+    new Route("/services", "Services", "/pages/services.php", []),
     new Route("/habitats", "Habitats", "/pages/habitats.html", []),
 
     new Route("/marais", "Marais", "/pages/habitats/marais/marais.html", []),
@@ -23,6 +23,9 @@ export const allRoutes = [
 
     new Route("/employe", "Employé", "/pages/employe/employe.html", [], "/pages/employe/js/auth/signinEmploye.js"),
     new Route("/espaceEmploye", "Espace Employé", "/pages/employe/espaceEmploye.html", ["employe"], "/pages/employe/js/espaceEmploye.js"),
+    new Route("/espaceEmployeVisiteur", "Espace Employe Visiteur", "/Php/php/espaceEmployeVisiteur.php", []),
+
+
 
     new Route("/veterinaire", "Vétérinaire", "/pages/veterinaire/veterinaire.html", [], "/pages/veterinaire/js/auth/signinVeterinaire.js"),
     new Route("/espaceVeterinaire", "Espace Veterinaire", "/pages/veterinaire/espaceVeterinaire.html", ["veterinaire"], "/pages/veterinaire/js/espaceVeterinaire.js"),

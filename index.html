@@ -68,7 +68,12 @@
             <div class="row">
 
                 <div class="col-12 col-lg-4">
-                    <h3 class="text-primary">Nos horaires</h3>                      
+                    <h3 class="text-primary inline">Nos horaires</h3>
+                    
+                    <div class="inline action-image-buttons" data-show="">
+                      <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionHoraire"></i></button>
+                    </div>
+
                     <p>Tous les jours de 9h40 à 23h00</p>
                 </div>
 
@@ -80,10 +85,38 @@
                 </div>
 
                 <div class="col-6 col-lg-4">
-                    <p>arcadia@gmail.com</p>
+                    <p class="inline">arcadia@gmail.com</p>
                 </div>
                 
             </div>
+
+            <!-- Modal édition -->
+
+<div class="modal fade" id="EditionHoraire" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionHoraireLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditionHoraireLabel">Edition Photo</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+          <form action="./Php/php/homeEditHoraire.php" method="post">
+              <div class="mb-3">
+                <label for="HoraireInput" class="form-label">Horaire</label>
+                <input type="text" class="form-control" name="HoraireInput" id="HoraireInput" placeholder="Horaire">
+              </div>
+      
+              <div class="text-center">
+                  <button type="button" class="btn btn-primary">Enregistrer</button>
+              </div>        
+          </form>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
         </footer>
     
     <script src="js/scriptArcadia.js"></script>
@@ -93,3 +126,6 @@
          
 </body>
 </html
+
+
+
