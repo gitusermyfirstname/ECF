@@ -1,3 +1,5 @@
+import { MongoClient } from 'mongodb';
+
 const val = 0;
 
 const apprecierEspece1 = document.getElementById('apprecierEspece1');
@@ -27,6 +29,12 @@ apprecierEspece3.addEventListener('click', () => {
 function newFunction() {
     return val + 1;
 }
+
+
+
+
+
+
 
 // Edition d'un titre
 

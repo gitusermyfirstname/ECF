@@ -30,18 +30,18 @@ const LoadContentPage = async () => {
   //Vérification des droits d'accès à la page
   const allRolesArray = actualRoute.authorize;
   
-  if (allRolesArray.length > 0) {
-    if (allRolesArray.includes("disconnected")) {
-      if (isConnected()) {
-        //window.location.replace("/");
-      }
-    } else {
-    const roleUser = getRole();
-      if (!allRolesArray.includes(roleUser)) {
-        //window.location.replace("/"); // Ici, l'utilisateur sera eventuellement redirigée vers une page Vous n'avez pas l'autorisation
-      }
-    }
-  }
+  // if (allRolesArray.length > 0) {
+  //   if (allRolesArray.includes("disconnected")) {
+  //     if (isConnected()) {
+  //       //window.location.replace("/");
+  //     }
+  //   } else {
+  //   const roleUser = getRole();
+  //     if (!allRolesArray.includes(roleUser)) {
+  //       //window.location.replace("/"); // Ici, l'utilisateur sera eventuellement redirigée vers une page Vous n'avez pas l'autorisation
+  //     }
+  //   }
+  // }
 
 
   // Récupération du contenu HTML de la route
