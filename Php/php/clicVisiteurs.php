@@ -1,2 +1,19 @@
 <?php
-$client = new MongoDB\Client('mongodb://mongodb-deployment:27017');
+
+require_once "../../vendor/autoload.php";
+
+$manager = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+var_dump($manager);
+
+
+
+// // connect to mongodb
+// echo "Connection to database successfully";
+// // select a database
+// $db = $m->examplesdb;
+// echo "Database examplesdb selected";
+// $collection = $db->examplescol;
+// echo "Collection selected succsessfully";
+// $cursor = $collection->find(); 
+// // echo $client;
+

@@ -7,9 +7,15 @@
 
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=arcadia';
-$username = 'root';
-$password = '';
+$dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
+$username = '366740_ut';
+$password = 'Aa123456789____0004';
+
+// require "Php/php/arecadia.php";
+
+// $dsn = 'mysql:host=localhost;dbname=arcadia';
+// $username = 'root';
+// $password = '';
 
 try {
     $PDO = new PDO($dsn, $username, $password);
@@ -86,6 +92,14 @@ try {
 
     // Récupération
     $Newhoraire = $horaire['horaire'];
+
+      //Commentaires
+      $queryAvis = 'SELECT * FROM avis where isVisible = "oui" ';
+      $stmtAvis = $PDO->query($queryAvis);
+      $listeAvis = $stmtAvis->fetchAll(PDO::FETCH_ASSOC);
+      // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      // Récupération
+      // Afficher les utilisateurs
 
 } catch (PDOException $e) {
     echo "Erreur". $e;
@@ -288,7 +302,7 @@ try {
                             '</h3>
 
                             <div class="inline" data-show="">
-                                <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatForêts"></i></button>
+                                <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceRestaurant"></i></button>
                             </div>
 
                     <p class="text-justify text-white p-3">' . 
@@ -322,7 +336,7 @@ try {
                             '</h3>
 
                             <div class="inline" data-show="">
-                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarais"></i></button>
+                                    <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceVisiteGuideeGratuite"></i></button>
                             </div>
 
                             <p class="text-justify p-3" id="descriptionHabitatMaraisDeMAJ">' . $descriptionServiceVisiteGuideeGratuite . '</p>'
@@ -375,7 +389,7 @@ try {
                             '</h3>
 
                             <div class="inline" data-show="">
-                                <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatForêts"></i></button>
+                                <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceVisiteSurRails"></i></button>
                             </div>
 
                     <p class="text-justify text-white p-3">' . 
@@ -487,7 +501,8 @@ try {
 
             <div class="container p-4">
                 <h2 class="text-center text-primary p-4">Commentaires</h2>
-                <form id="commentaires">
+                <form id="commentaires" action="Php/php/commentaire.php" method="post">
+
                     <div class="mb-3">
                       <label for="pseudoInput" class="form-label">Votre pseudo</label>
                       <input type="text" class="form-control" id="pseudoInput" placeholder="Votre pseudo" name="pseudo">
@@ -500,7 +515,7 @@ try {
 
                     <div class="">
                         <label for="opinion">Votre opinion ici</label>
-                        <textarea class="champ" placeholder="Votre opinion" id="opinion"></textarea>
+                        <textarea class="champ" placeholder="Votre opinion" name="opinion" id="opinion"></textarea>
                     </div>
             
                     <div class="text-center p-3">
@@ -508,9 +523,24 @@ try {
                     </div>
                 </form>
 
-                <div class="container">
-                    <h2 class="text-center text-primary p-4">Commentaires des visiteurs</h2>
-                </div>
+                <div class="container row-col-1 row-col-lg-1">
+
+                    <section class="container p-4">
+
+                        <h2>Liste des commentaires</h2>
+
+                        <?php
+
+                            foreach ($listeAvis as $avis) {
+                                echo "Avis de : " . $avis["pseudo"] . "<br>";
+                                echo "Envoyé le : " . $avis["date"] . "<br>";
+                                echo "L'avis : " . $avis["avis"] . "<br>";
+                                echo "<br>";
+                            }
+                            
+                        ?>
+
+                 </div>
 
             </div>
             
@@ -749,7 +779,7 @@ try {
 
 <!-- Edit service Visite Guidée Gratuite -->
 
-<div class="modal fade" id="editHabitatForêts" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editServiceVisiteGuideeGratuiteLabel" aria-hidden="true">
+<div class="modal fade" id="editServiceVisiteGuideeGratuite" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editServiceVisiteGuideeGratuiteLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

@@ -5,50 +5,104 @@
     </div>
 </div>
 
-<?php
+<div class="container row-col-1 row-col-lg-2" style="display: flex;">
 
-$dsn = 'mysql:host=localhost;dbname=arcadia';
-$username = 'root';
-$password = '';
+    <section class="container p-4" style="overflow: scroll;">
 
-try {
-    $PDO = new PDO($dsn, $username, $password);
-    $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        <h2>Liste des mails</h2>
 
-    //Récupération des champs
+        <?php
 
-    // Habitats
+            $dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
+            $username = '366740_ut';
+            $password = 'Aa123456789____0004';
 
-    //Marais
-    $queryMail = "SELECT * FROM mail";
-    $stmtMail = $PDO->query($queryMail);
-    $listeMail = $stmtMail->fetchAll(PDO::FETCH_ASSOC);
-    // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // Récupération
-    // Afficher les utilisateurs
-    foreach ($listeMail as $mail) {
-        echo "Mail de : " . $mail["email"] . "<br>";
-        echo "Envoyé le : " . $mail["date"] . "<br>";
-        echo "Le mail : " . $mail["mail"] . "<br>";
-        echo "<br>";
-    }
+            // require "./arcadia.php";
 
-} catch (PDOException $e) {
-    echo "Erreur". $e;
-}
+            // $dsn = 'mysql:host=localhost;dbname=arcadia';
+            // $username = 'root';
+            // $password = '';
 
-?>
 
-<!-- <section class="container p-4">
+            try {
+                $PDO = new PDO($dsn, $username, $password);
+                $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-<h2>Liste des mails</h2>
+                //Récupération des champs
 
-</section>
+                // Habitats
 
-<section class="container p-4">
+                //Marais
+                $queryMail = "SELECT * FROM mail";
+                $stmtMail = $PDO->query($queryMail);
+                $listeMail = $stmtMail->fetchAll(PDO::FETCH_ASSOC);
+                // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                // Récupération
+                // Afficher les utilisateurs
+                foreach ($listeMail as $mail) {
+                    echo "Mail de : " . $mail["email"] . "<br>";
+                    echo "Envoyé le : " . $mail["date"] . "<br>";
+                    echo "Le mail : " . $mail["mail"] . "<br>";
+                    echo "<br>";
 
-<h2>Liste des mails</h2>
+                    echo '<div class="text-center p-3">
 
-</section> -->
+                            <form id="" action="" method="post">
+                            <button type="submit" class="btn btn-primary inline" id="btnCommentaire">rep</button>
+                            </form>
 
-    
+                            </div>';
+                }
+
+            } catch (PDOException $e) {
+                echo "Erreur". $e;
+            }
+
+        ?>
+
+    </section>
+
+    <section class="container p-4">
+
+        <h2>Liste des commentaires</h2>
+
+        <?php
+
+            try {
+                $PDO = new PDO($dsn, $username, $password);
+                $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
+                //Commentaires
+
+                $queryAvis = "SELECT * FROM avis";
+                $stmtAvis = $PDO->query($queryAvis);
+                $listeAvis = $stmtAvis->fetchAll(PDO::FETCH_ASSOC);
+                
+                // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                // Récupération
+                // Afficher les utilisateurs
+
+                foreach ($listeAvis as $avis) {
+                    echo "Avis de : " . $avis["pseudo"] . "<br>";
+                    echo "Envoyé le : " . $avis["date"] . "<br>";
+                    echo "L'avis : " . $avis["avis"] . "<br>";
+                    echo "<br>";
+
+                    echo '<div class="text-center p-3">
+                            <form id="Php/php/maj.php" action="Php/php/maj.php" method="post">
+                            <button type="submit" class="btn btn-primary" id="btnCommentaire">ok</button>
+                            </form>
+                            </div>';
+
+                }
+
+            } catch (PDOException $e) {
+                echo "Erreur". $e;
+            }
+
+        ?>
+
+
+    </section>
+
+</div>

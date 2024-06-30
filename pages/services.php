@@ -6,9 +6,15 @@
 
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=arcadia';
-$username = 'root';
-$password = '';
+// require "Php/php/arcadia.php";
+
+$dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
+$username = '366740_ut';
+$password = 'Aa123456789____0004';
+
+// $dsn = 'mysql:host=localhost;dbname=arcadia';
+// $username = 'root';
+// $password = '';
 
 try {
     $PDO = new PDO($dsn, $username, $password);

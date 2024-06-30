@@ -45,9 +45,7 @@ export const allRoutes = [
     new Route("/editServices", "Edition des services", "/pages/admin/services/editServices.html", ["admin"], "/pages/admin/js/services/editServices.js"),
     new Route("/editServices", "Edition des services", "/pages/admin/services/editServices.html", ["admin"], "/pages/admin/js/services/editServices.js"),
     
-
-
-
+    new Route("/clicVisiteurs", "clic des Visiteurs", "/Php/php/clicVisiteurs.php", ["admin"])
 
 ];
 

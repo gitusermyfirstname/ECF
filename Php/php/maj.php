@@ -14,17 +14,18 @@ try {
     $PDO = new PDO($dsn, $username, $password);
     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $titre = $_POST['titreServiceRestaurantDeMiseAJourInput'];
-    $description = $_POST['descriptionServiceRestaurantDeMiseAJourInput'];
+    $cookieNPs = $_COOKIE["utilisateurPseudo"];
+    $cookieNAv = $_COOKIE["utilisateurAvis"];
+
+    $cookieNAv = $_COOKIE["utilisateurAvis"];
 
     // putting
-
-    $insertQuery = "INSERT INTO habitat (name, description) VALUES (:titre, :description)";
-
-    $stmt = $PDO->prepare($insertQuery);
     
-    $stmt->bindParam(':titre', $titre);
-    $stmt->bindParam(':description', $description);
+    $Query = "UPDATE avis SET isVisible = 'oui' WHERE cookieNamePseudo = 'pseudo' AND cookieNameOpinion = 'Opinion'";
+
+    // $Query = 'UPDATE avis SET isVisible = "oui" WHERE cookieNamePseudo = ' . $cookieNPs . 'AND cookieNameOpinion = ' . $cookieNAv ."'";
+
+    $stmt = $PDO->prepare($Query);
 
     $stmt->execute();
     
@@ -32,7 +33,6 @@ try {
 
 } catch (PDOException $e) {
     echo "Exeption". $e;
-    //throw $th;
 }
 
 ?>

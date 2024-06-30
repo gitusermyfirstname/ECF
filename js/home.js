@@ -1,5 +1,3 @@
-import { MongoClient } from 'mongodb';
-
 const val = 0;
 
 const apprecierEspece1 = document.getElementById('apprecierEspece1');
