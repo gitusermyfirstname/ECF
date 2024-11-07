@@ -1,5 +1,8 @@
 <?php
 
+use phpDocumentor\Reflection\Location;
+use PhpParser\Node\Expr\Assign;
+
 $dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
 $username = '366740_ut';
 $password = 'Aa123456789____0004';
@@ -31,10 +34,9 @@ try {
 
     $stmt->execute();
     
-    echo "ok";
+    // echo "ok";
+    header('Location: /');
 
 } catch (PDOException $e) {
     echo "Exeption". $e;
 }
-
-?>

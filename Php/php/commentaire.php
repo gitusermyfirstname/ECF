@@ -2,7 +2,7 @@
 
 $dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
 $username = '366740_ut';
-$password = 'Aa123456789____0004';
+$password = 'Aa123456789_0004';
 
 // require "./arcadia.php";
 
@@ -43,7 +43,9 @@ try {
 
     // $stmtUpdtID->execute();
     
-    echo "ok";
+    // echo "ok";
+    header('Location: /');
+
 
     //$Query = 'UPDATE avis SET isVisible = "oui" Where avis_id = PDO->$_COOKIE';
 
@@ -51,5 +53,3 @@ try {
 } catch (PDOException $e) {
     echo "Exeption". $e;
 }
-
-?>

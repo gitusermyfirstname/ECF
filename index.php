@@ -18,6 +18,37 @@
     <title>Espace zoologique Arcadia</title>
 </head>
 
+<?php
+
+    $dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
+    $username = '366740_ut';
+    $password = 'Aa123456789____0004';
+
+    // require "./arcadia.php";
+
+    // $dsn = 'mysql:host=localhost;dbname=arcadia';
+    // $username = 'root';
+    // $password = '';
+
+    try {
+
+        $PDO = new PDO($dsn, $username, $password);
+        $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // Horaire
+
+        $queryHoraire = "SELECT * FROM horaire where horaire_id = (SELECT COUNT(*) from horaire)";
+        $stmtHoraire = $PDO->query($queryHoraire);
+        $horaire = $stmtHoraire->fetch(PDO::FETCH_ASSOC);
+
+        // Récupération
+        $Newhoraire = $horaire['horaire'];
+
+      } catch (PDOException $e) {
+          echo "Exeption". $e;
+      }
+
+?>
+
 <body>
     <header>
         
@@ -41,8 +72,24 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/veterinaire" data-show="disconnected">Connexion</a>
+                    <!--<a class="nav-link" href="/veterinaire" data-show="disconnected"></a>-->
+                      <select  name="connexionDeLUtilisateur" id="connexionDeLUtilisateur">
+                        <option value="first" selected disabled>Connexion</option>
+                        <option value="employe" id="employe">Employe</option>
+                        <option value="veterinaire" id="veterinaire">Vétérinaire</option>
+                        <option value="admin" id="admin">Admin</option>
+                      </select>
+            
                   </li>
+
+                  <!-- <li class="nav-item">
+                    <select class="nav-item" name="db" id="db">
+                      <option class="nav-item"><a class="nav-link" href="/veterinaire" data-show="disconnected">Connexion</option>
+                      <option class="nav-item"><a class="nav-link" href="/veterinaire" data-show="disconnected">Connexion veterinaire</a></option>
+                      <option class="nav-item"><a class="nav-link" href="/employe" data-show="disconnected">Connexion employe</a></option>
+                      <option class="nav-item"><a class="nav-link" href="/admin" data-show="disconnected">Connexion admin</a></option>
+                    </select>
+                  </li> -->
 
                   <li class="nav-item">
                     <button class="nav-link" id="signout-btn" data-show="connected">Déconnexion</a>
@@ -64,33 +111,7 @@
         <!-- Le contenue de la page sera mis ici -->
     </main>
 
-        <footer class="bg-black text-white text-center footer">
-            <div class="row">
-
-                <div class="col-12 col-lg-4">
-                    <h3 class="text-primary inline">Nos horaires</h3>
-                    
-                    <div class="inline action-image-buttons" data-show="">
-                      <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionHoraire"></i></button>
-                    </div>
-
-                    <p>Tous les jours de 9h40 à 23h00</p>
-                </div>
-
-                <div class="col-6 col-lg-4">
-                    <p>Arcadia<br/>
-                       Situé en France près de la forêt de Brocéliande <br/>
-                       Bretagne <br/>
-                    </p>
-                </div>
-
-                <div class="col-6 col-lg-4">
-                    <p class="inline">arcadia@gmail.com</p>
-                </div>
-                
-            </div>
-
-            <!-- Modal édition -->
+<!-- Modal édition -->
 
 <div class="modal fade" id="EditionHoraire" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionHoraireLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -109,7 +130,7 @@
 
               <div class="text-center">
                   <button type="button" class="btn btn-primary">Enregistrer</button>
-              </div>        
+              </div>
           </form>
 
       </div>
@@ -117,8 +138,37 @@
     </div>
   </div>
 </div>
+
+        <footer class="bg-black text-white text-center footer">
+            
+            <div class="row">
+
+                    <div class="col-12 col-lg-4">
+
+                        <h3 class="text-primary inline">Nos horaires</h3>
+                          <div class="inline action-image-buttons" data-show="">
+                            <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionHoraire"></i></button>
+                          </div>
+                            <?php
+                                  echo '<p>'. $Newhoraire . '</p>';
+                            ?>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <p>Arcadia<br/>
+                          Situé en France près de la forêt de Brocéliande <br/>
+                          Bretagne <br/>
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <p class="inline">arcadia@gmail.com</p>
+                    </div>
+                    
+            </div>
+
         </footer>
-    
+
     <script src="js/scriptArcadia.js"></script>
     <!-- <script src="./pages/admin/js/services/editServices.js"></script> -->
     <script type="module" src="./Router/router.js"></script>

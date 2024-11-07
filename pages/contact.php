@@ -49,7 +49,7 @@
     </form>
 
     <div class="text-center pt-3">
-        <a href="/home">Retour à home</a>
+        <a href="/">Retour à home</a>
     </div>
 
 </div>

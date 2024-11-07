@@ -7,7 +7,7 @@ var_dump($manager);
 
 
 
-// // connect to mongodb
+// Connect to mongodb
 // echo "Connection to database successfully";
 // // select a database
 // $db = $m->examplesdb;

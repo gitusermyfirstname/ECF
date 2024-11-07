@@ -125,10 +125,13 @@ function getInfoUtilisateur() {
     const requestOptions = {
         method: "GET",
         headers: myHeaders,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "*cors",
+redirect: "follow",
+        mode: "*cors"
     };
 
-    fetch("http://127.0.0.1:8000/api/account/me", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/account/me", requestOptions)
     .then(response => {        
         if (response.ok) {
             return response.json();
@@ -146,3 +149,27 @@ function getInfoUtilisateur() {
         console.error("erreur lors de la récupération des infos de l'utilisateur");
     });
 }
+
+function isSelected(id, value, action) {
+    const optionSelected = connexionDeLUtilisateur.value;
+    if (optionSelected == value) {
+        action();
+    }
+}
+
+const connexionDeLUtilisateur = document.getElementById('connexionDeLUtilisateur')
+const employe = document.getElementById('employe');
+const veterinaire = document.getElementById('veterinaire');
+const admin = document.getElementById('admin');
+
+connexionDeLUtilisateur.addEventListener('change', () => {
+    if (connexionDeLUtilisateur.value == "employe") {
+        window.location = "https://utilisateur.alwaysdata.net/employe";
+    }
+    if (connexionDeLUtilisateur.value == "veterinaire") {
+        window.location = "https://utilisateur.alwaysdata.net/veterinaire";
+    }
+    if (connexionDeLUtilisateur.value == "admin") {
+        window.location = "https://utilisateur.alwaysdata.net/admin";
+    }
+});

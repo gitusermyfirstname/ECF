@@ -17,14 +17,13 @@ export const allRoutes = [
     new Route("/services", "Services", "/pages/services.php", []),
     new Route("/habitats", "Habitats", "/pages/habitats.html", []),
 
-    new Route("/marais", "Marais", "/pages/habitats/marais/marais.html", []),
-    new Route("/forets", "Forêts", "/pages/habitats/forets/forets.html", []),
-    new Route("/prairies", "Prairies", "/pages/habitats/prairies/prairies.html", []),
+    new Route("/marais", "Marais", "/pages/habitats/marais/marais.php", []),
+    new Route("/forets", "Forêts", "/pages/habitats/forets/forets.php", []),
+    new Route("/prairies", "Prairies", "/pages/habitats/prairies/prairies.php", []),
 
     new Route("/employe", "Employé", "/pages/employe/employe.html", [], "/pages/employe/js/auth/signinEmploye.js"),
     new Route("/espaceEmploye", "Espace Employé", "/pages/employe/espaceEmploye.html", ["employe"], "/pages/employe/js/espaceEmploye.js"),
     new Route("/espaceEmployeVisiteur", "Espace Employe Visiteur", "/Php/php/espaceEmployeVisiteur.php", []),
-
 
 
     new Route("/veterinaire", "Vétérinaire", "/pages/veterinaire/veterinaire.html", [], "/pages/veterinaire/js/auth/signinVeterinaire.js"),

@@ -124,15 +124,18 @@ function inscrireUtilisateur() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "same-origin"
     };
 
-    fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
     .then(response => {
         
         if (response.ok) {
 
-            return response.json();
+            console.log(response)
+
+            //return response.json();
 
         } else {
             alert("erreur lors de l'inscription");

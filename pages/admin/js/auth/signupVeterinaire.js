@@ -124,10 +124,13 @@ function inscrireUtilisateur() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "*cors",
+        redirect: "follow",
+        mode: "*cors"
     };
 
-    fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
     .then(response => {
         
         if (response.ok) {

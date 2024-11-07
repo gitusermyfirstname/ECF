@@ -8,6 +8,7 @@ const tokenCookieName = "accesstoken";
 const roleCookieName = "Role";
 const signouBtn = document.getElementById("signout-btn"); // Je vais ajouter un listener d'évenement sur cet elt
 
+
 signouBtn.addEventListener("click", signout);
 
 function getRole() {
@@ -117,10 +118,13 @@ function getInfoUtilisateur() {
     const requestOptions = {
         method: "GET",
         headers: myHeaders,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "*cors",
+redirect: "follow",
+        mode: "*cors"
     };
 
-    fetch("http://127.0.0.1:8000/api/account/me", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/account/me", requestOptions)
     .then(response => {        
         if (response.ok) {
             return response.json();

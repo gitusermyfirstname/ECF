@@ -9,13 +9,7 @@
 
 $dsn = 'mysql:host=mysql-utilisateur.alwaysdata.net;dbname=utilisateur_arecadia';
 $username = '366740_ut';
-$password = 'Aa123456789____0004';
-
-// require "Php/php/arecadia.php";
-
-// $dsn = 'mysql:host=localhost;dbname=arcadia';
-// $username = 'root';
-// $password = '';
+$password =';
 
 try {
     $PDO = new PDO($dsn, $username, $password);
@@ -93,13 +87,13 @@ try {
     // Récupération
     $Newhoraire = $horaire['horaire'];
 
-      //Commentaires
-      $queryAvis = 'SELECT * FROM avis where isVisible = "oui" ';
-      $stmtAvis = $PDO->query($queryAvis);
-      $listeAvis = $stmtAvis->fetchAll(PDO::FETCH_ASSOC);
-      // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      // Récupération
-      // Afficher les utilisateurs
+    //Commentaires
+    $queryAvis = 'SELECT * FROM avis where isVisible = "oui" ';
+    $stmtAvis = $PDO->query($queryAvis);
+    $listeAvis = $stmtAvis->fetchAll(PDO::FETCH_ASSOC);
+    // $habitat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Récupération
+    // Afficher les utilisateurs
 
 } catch (PDOException $e) {
     echo "Erreur". $e;
@@ -129,8 +123,7 @@ try {
             <h2 class="text-center text-primary">Les différents habitats à Arcadia</h2>
             <div class="row row-col-4 align-items-center">
                 <div class="col text-justify" id="aModifier">
-                    
-                
+                              
                 <?php
 
                     echo '<h3 class="p-3 inline" id="titre">' .
@@ -259,7 +252,7 @@ try {
                         On y retrouve :
                     </p> -->
                     <ul>
-                        <li><a href="#">Les kangarous</a></li>
+                        <li><a href="#">Les kangourous</a></li>
                     </ul>
 
                 </div>
@@ -473,7 +466,7 @@ try {
             <h2 class="text-center text-primary">Les Animaux à Arcadia</h2>
             <div class="row row-col-4 align-items-center">
                 <div class="col text-justify">
-                    <h3 class="p-3">Les kangarous</h3>
+                    <h3 class="p-3">Les kangourous</h3>
                     <p class="text-justify p-3">
                         C'est un marsupial, se retrouve en forêts
                     </p>
@@ -492,11 +485,11 @@ try {
             </div>
 
             <div class="text-center pt-4">
-                <button class="btn btn-secondary" id="apprecierEspece3">J'apprécie</button>            
+                <button class="btn btn-secondary" id="apprecierEspece3">J'apprécie</button>
             </div>
 
             <div class="text-center pt-4">
-                <a href="/habitats" class="btn btn-primary">Voir tous les animaux d'Arcadia</a>            
+                <a href="/habitats" class="btn btn-primary">Voir tous les animaux d'Arcadia</a>
             </div>
 
             <div class="container p-4">
@@ -509,7 +502,7 @@ try {
                     
                       <div class="invalid-feedback">
                         Requis
-                      </div>
+                    </div>
                     
                     </div>
 
@@ -540,7 +533,7 @@ try {
                             
                         ?>
 
-                 </div>
+                </div>
 
             </div>
             
@@ -849,11 +842,11 @@ try {
 
 <!-- Modal édition horaire -->
 
-            <div class="modal fade" id="EditionHoraire" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionHoraireLabel" aria-hidden="true">
+<div class="modal fade" id="EditionHoraire" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EditionHoraireLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title fs-5" id="EditionHoraireLabel">Edition Photo</h2>
+        <h2 class="modal-title fs-5" id="EditionHoraireLabel">Edition horaire</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -865,8 +858,8 @@ try {
               </div>
       
               <div class="text-center">
-                  <button type="button" class="btn btn-primary">Enregistrer</button>
-              </div>        
+              <input type="submit" class="btn btn-primary" id="btnEditHoraireInput" data-bs-dismiss="modal" value="Modifier">
+              </div>
           </form>
 
       </div>

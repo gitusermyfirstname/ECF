@@ -28,10 +28,11 @@ function getCredencials() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "no-cors"
     };
 
-    fetch("http://127.0.0.1:8000/api/login", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/login", requestOptions)
     .then(response => {
         
         if (response.ok) {
@@ -45,11 +46,11 @@ function getCredencials() {
 
     .then(result => {
         // Il faut récupérer le vrai token
-        const token = result.apiToken;
-        setToken(token);
+        //const token = result.apiToken;
+        //setToken(token);
         // Placer ce token en cookies
     
-        setCookie(roleCookieName, result.roles[0], 8);
+        //setCookie(roleCookieName, result.roles[0], 8);
         window.location.replace("/espaceVeterinaire");
 
     })

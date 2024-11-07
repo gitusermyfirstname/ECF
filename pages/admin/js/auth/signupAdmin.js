@@ -124,26 +124,35 @@ function inscrireUtilisateur() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow"
+        redirect: "follow",
+        mode: "*cors",
+        redirect: "follow",
+        mode: "*cors"
     };
 
-    fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
     .then(response => {
+
+
+        console.log(response);
+        // alert("Super, inscription ok");
         
-        if (response.ok) {
-            return response.json();
+        // if (response.ok) {
+        //     return response.json();
 
-        } else {
-            alert("erreur lors de l'inscription");
-        }
+        // } else {
+        //     alert("erreur lors de l'inscription");
+        // }
     })
 
-    .then(result => {
-        alert("Super, inscription ok");
-        document.location.href = "/admin";
+    // .then(result => {
+    //     console.log("\n");
+    //     console.log(result);
+        // alert("Super, inscription ok");
+        // document.location.href = "/admin";
 
-    })
+    // })
     
-    .catch((error) => console.error(error));
+    .catch(() => alert("erreur lors de l'inscription"));
     
 }

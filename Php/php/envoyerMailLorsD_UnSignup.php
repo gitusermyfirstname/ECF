@@ -57,17 +57,18 @@
 
 $cookie_name = "userMail";
 
-if(!isset($_COOKIE["userMail"])) {
-  echo "Cookie named '" . $cookie_name . "' is not set!";
-} else {
-  echo "Cookie '" . $cookie_name . "' is set!<br>";
-  echo "Value is: " . $_COOKIE[$cookie_name];
-}
+// if(!isset($_COOKIE["userMail"])) {
+//   echo "Cookie named '" . $cookie_name . "' is not set!";
+// } else {
+//   echo "Cookie '" . $cookie_name . "' is set!<br>";
+//   echo "Value is: " . $_COOKIE[$cookie_name];
+// }
+
 ?>
 
 <h2>Send e-mail to <?php echo $_COOKIE[$cookie_name] ?> </h2>
 
-<form action="mailto:<?php echo $_COOKIE[$cookie_name]?>" method="post" enctype="text/plain">
+<form action="mailto:<?php echo $_COOKIE[$cookie_name]?>?subject='Au sujet de vos Id de connexion'" method="post" enctype="text/plain">
 Name:<br>
 <input type="text" name="name"><br>
 E-mail:<br>
