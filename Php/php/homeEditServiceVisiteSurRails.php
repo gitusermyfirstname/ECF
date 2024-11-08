@@ -34,5 +34,3 @@ try {
     echo "Exeption". $e;
     //throw $th;
 }
-
-?>

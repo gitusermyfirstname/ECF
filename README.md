@@ -4,26 +4,11 @@ Cas d'utilisation
 
 MISE EN PLACE DE L'ENVIRONNEMENT DE TRAVAIL
 
-Etape 1) Création du repository ECF sur github
-Etape 1) Création du dossier ECF en local et clone du repository ECF
-Etape 3) Création de la base de donnee
-Etape 4) Création du dossier arcadiaback pour le backoffice, et clone du repository pour un API restaurant
-Etape 5) Déploiement du frontend et du backend sur always alwaysdata
-
-LE SITE
-
-Connexion
-Administrateur, /admin
-Employe, /employe
-Veterinaire, /veterinaire
-
-Dashbord
-Administrateur, /adminDashboard
-Employe, /espaceEmploye
-Employe, /espaceEmploye
-Veterinaire, /espaceVeterinaire
-
-
-
-
-
+1)	Création du dossier_projet ‘’ECF’’
+2)	VS code sur ‘’ECF’’
+3)	Créer un premier fichier readme.md à la racine du projet
+4)	git init, pour initialiser un dépôt git
+5)	git commit -m ‘’Ajout readme.md’’
+6)	Le remote n’existant pas VS code propose Publish branch main. Nous pouvons choisir de publier en privé ou public
+7)	VS Code propose d’ajouter le remote
+8)	Le repository ‘’ECF’’ est automatiquement créer sur github
