@@ -2,6 +2,13 @@
 Branch maquettage : inclus les diagrammes et maquettes de l'ECF
 Cas d'utilisation
 
+
+L'URL du site : utilisateur.alwaysdata.net
+accès à l'espace administrateur à https://admin.alwaysdata.com
+mail : lenatbze@gmail.com
+mot de passe : A123456789____0000123____0004
+
+
 MISE EN PLACE DE L'ENVIRONNEMENT DE TRAVAIL
 
 1)	Création du dossier_projet ‘’ECF’’
