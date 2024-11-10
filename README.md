@@ -9,6 +9,21 @@ mail : lenatbze@gmail.com
 mot de passe : A123456789____0000123____0004
 
 
+Pour l'API qui sert à l'inscription et à la connexion des utilisateurs :
+
+https://apiecf.alwaysdata.net/
+
+Hébergé sur Alwaysdata :
+
+admin.alwaysdata.com
+gnouingninkegniegan@gmail.com
+Pourceci_020000____
+même mot de passe pour le FTP
+
+Lien du git :
+https://github.com/gitusermyfirstname/apiecf
+
+
 MISE EN PLACE DE L'ENVIRONNEMENT DE TRAVAIL
 
 1)	Création du dossier_projet ‘’ECF’’
