@@ -3,7 +3,7 @@ Branch maquettage : inclus les diagrammes et maquettes de l'ECF
 Cas d'utilisation
 
 
-L'URL du site : utilisateur.alwaysdata.net
+L'URL du site : utilisateur.alwaysdata.net/api/doc
 accès à l'espace administrateur sur Alwaysdata à https://admin.alwaysdata.com
 mail : lenatbze@gmail.com
 mot de passe : A123456789____0000123____0004
