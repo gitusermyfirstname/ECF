@@ -11,7 +11,7 @@ mot de passe : A123456789____0000123____0004
 
 Pour l'API qui sert à l'inscription et à la connexion des utilisateurs :
 
-https://apiecf.alwaysdata.net/
+https://apiecf.alwaysdata.net/api/doc
 
 Hébergé sur Alwaysdata :
 
