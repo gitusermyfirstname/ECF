@@ -28,8 +28,7 @@ function getCredencials() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow",
-        mode: "no-cors"
+        redirect: "follow"
     };
 
     fetch("https://apiecf.alwaysdata.net/api/login", requestOptions)
@@ -46,11 +45,11 @@ function getCredencials() {
 
     .then(result => {
         // Il faut récupérer le vrai token
-        //const token = result.apiToken;
-        //setToken(token);
+        const token = result.apiToken;
+        setToken(token);
         // Placer ce token en cookies
     
-        //setCookie(roleCookieName, result.roles[0], 8);
+        setCookie(roleCookieName, result.roles[0], 8);
         window.location.replace("/espaceEmploye");
 
     })

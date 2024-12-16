@@ -1,4 +1,4 @@
-//Implémenter le JS de laa page
+//Implémenter le JS de la page
 
 const inputNom = document.getElementById("NomInput");
 const inputPreNom = document.getElementById("PrenomInput");
@@ -99,60 +99,40 @@ function validateRequired(input){
 
 function inscrireUtilisateur() {
 
-// A )
-    // Récupérer les données du formulaire
-    // Pour le faire, on untilise l'objet javascript formdata
-    // qui est l'objet pour loisiblement, récupérer les données depuis un formulaire, de part les attributs name
-
     const dataform = new FormData(formInscriptionAdmin);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
-    // B )
-    // Et via le JSON.stringify, je vais passer les éléments name récupéré, et listés sur le tableau de l'objet DataForm, soit
-    // Soit la variable formdata qui est un tableau
-
     const raw = JSON.stringify({
         "firstName": dataform.get("nom"),
         "lastName": dataform.get("prenom"),
         "email": dataform.get("email"),
-        "password": dataform.get("mdp")
+        "password": dataform.get("mdp"),
     });
-
     const requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
         redirect: "follow",
-        mode: "*cors",
-        redirect: "follow",
-        mode: "*cors"
     };
 
     fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
     .then(response => {
-
-
-        console.log(response);
-        // alert("Super, inscription ok");
         
-        // if (response.ok) {
-        //     return response.json();
+        if (response.ok) {
+            return response.json();
 
-        // } else {
-        //     alert("erreur lors de l'inscription");
-        // }
+        } else {
+            alert("erreur response lors de l'inscription");
+        }
     })
 
-    // .then(result => {
-    //     console.log("\n");
-    //     console.log(result);
-        // alert("Super, inscription ok");
-        // document.location.href = "/admin";
+    .then(result => {
+        alert("Super, inscription réussie");
+        document.location.href = "/admin";
 
-    // })
+    })
     
-    .catch(() => alert("erreur lors de l'inscription"));
+    .catch(() => alert("erreur catched lors de l'inscription"));
     
 }

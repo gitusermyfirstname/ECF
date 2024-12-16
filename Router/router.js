@@ -33,12 +33,12 @@ const LoadContentPage = async () => {
   if (allRolesArray.length > 0) {
     if (allRolesArray.includes("disconnected")) {
       if (isConnected()) {
-      //  window.location.replace("/");
+        window.location.replace("/"); // commenter ?
       }
     } else {
     const roleUser = getRole();
       if (!allRolesArray.includes(roleUser)) {
-      //  window.location.replace("/"); // Ici, l'utilisateur sera eventuellement redirigée vers une page Vous n'avez pas l'autorisation
+        window.location.replace("/"); // Ici, l'utilisateur sera eventuellement redirigée vers une page Vous n'avez pas l'autorisation
       }
     }
   }

@@ -124,10 +124,7 @@ function inscrireUtilisateur() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow",
-        mode: "*cors",
-        redirect: "follow",
-        mode: "*cors"
+        redirect: "follow"
     };
 
     fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
@@ -142,8 +139,17 @@ function inscrireUtilisateur() {
     })
 
     .then(result => {
+
+        //const dataform = new FormData(formInscriptionEmploye);
+
+        // const leNom = dataform.get("nom");
+        // setCookie("userNom", leNom, 8);
+
+        const leMail = dataform.get("email");
+        setCookie("userMail", leMail, 8);
+
         alert("Super, inscription ok");
-        document.location.href = "/adminDashBoard";
+        document.location.href = "/signupMail";
 
     })
     

@@ -17,11 +17,6 @@
             $username = '366740_ut';
             $password = 'Aa123456789____0004';
 
-            // require "./arcadia.php";
-
-            // $dsn = 'mysql:host=localhost;dbname=arcadia';
-            // $username = 'root';
-            // $password = '';
 
 
             try {
@@ -88,8 +83,14 @@
                     echo "L'avis : " . $avis["avis"] . "<br>";
                     echo "<br>";
 
+                    // echo '<div class="text-center p-3">
+                    // <form id="Php/php/maj.php" action="Php/php/maj.php" method="post">
+                    // <button type="submit" class="btn btn-primary" id="btnCommentaire">ok</button>
+                    // </form>
+                    // </div>';
+
                     echo '<div class="text-center p-3">
-                            <form id="Php/php/maj.php" action="Php/php/maj.php" method="post">
+                            <form id="Php/php/maj.php" action="#" method="post">
                             <button type="submit" class="btn btn-primary" id="btnCommentaire">ok</button>
                             </form>
                             </div>';

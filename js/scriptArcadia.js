@@ -1,10 +1,6 @@
-// En plus de ces methodes, je vais coder des methodes spécifique à la connexion
-
-// La methode setCookie va me permettre de placer le cookie en token
-
 const tokenCookieName = "accesstoken";
 
-// Je crée la constante Rôle,
+// Création de la constante rôle
 
 const roleCookieName = "Role";
 const signouBtn = document.getElementById("signout-btn"); // Je vais ajouter un listener d'évenement sur cet elt
@@ -71,6 +67,22 @@ function isAdminConnected() {
     }
 }
 
+function isVeterinaireConnected() {
+    if (getToken() == null || getToken == undefined) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function isEmployeConnected() {
+    if (getToken() == null || getToken == undefined) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 // if (isConnected()) {
 //     alert("Online");
 // } else {
@@ -99,10 +111,16 @@ function showAndHideElementsForRoles() {
                     element.classList.add("d-none");
                 }            
                 break;
-            case 'client':
-                if (!userConnected || role != "client") {
+            case 'employe':
+                if (!userConnected || role != "employe") {
                     element.classList.add("d-none");
                 }
+                break;
+            case 'veterinaire':
+                if (!userConnected || role != "veterinaire") {
+                    element.classList.add("d-none");
+                }
+                break;
         }
     })
 }
@@ -125,10 +143,7 @@ function getInfoUtilisateur() {
     const requestOptions = {
         method: "GET",
         headers: myHeaders,
-        redirect: "follow",
-        mode: "*cors",
-redirect: "follow",
-        mode: "*cors"
+        redirect: "follow"
     };
 
     fetch("https://apiecf.alwaysdata.net/api/account/me", requestOptions)

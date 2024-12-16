@@ -1,10 +1,10 @@
-<!-- <div class="hero-scene text-center text-white">
+<div class="hero-scene text-center text-white">
     <div class="hero-scene-content">
         <h1>Mail de notification</h1>
     </div>
 </div>
 
-// ?php
+<!-- // ?php
 
 // echo $_COOKIE["userMail"];
 
@@ -48,11 +48,6 @@
           <input type="email" class="form-control" id="EmailEmployeInput" placeholder="lemail@gmail.com" name="email">
         </div> -->
 
-<!DOCTYPE html>
-<html>
-
-<body>
-
 <?php
 
 $cookie_name = "userMail";
@@ -66,20 +61,30 @@ $cookie_name = "userMail";
 
 ?>
 
-<h2>Send e-mail to <?php echo $_COOKIE[$cookie_name] ?> </h2>
+<div class="container">
+    <h1>Sending e-mail to <?php echo $_COOKIE[$cookie_name] ?> </h1>
 
-<form action="mailto:<?php echo $_COOKIE[$cookie_name]?>?subject='Au sujet de vos Id de connexion'" method="post" enctype="text/plain">
-Name:<br>
-<input type="text" name="name"><br>
-E-mail:<br>
-<input type="text" name="mail"><br>
-Comment:<br>
-<input type="text" name="comment" size="50"><br><br>
-<input type="submit" value="Send">
-</form>
+    <form action="mailto:<?php echo $_COOKIE[$cookie_name]?>?subject='Au sujet de vos Ids de connexion'" method="post" enctype="text/plain">
 
-</body>
-</html>
+        <div class="mb-3"> 
+            <label for="name" class="form-label">Name</label>
+            <input type="name" class="form-control" id="name" value="<?php echo $_COOKIE["userNom"]?>">
+        </div>
+
+        <div class="mb-3"> 
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" name="mail" class="mb-3 form-control" id="mail" value="<?php echo $_COOKIE[$cookie_name]?>"><br>
+        </div>
+
+        <div class="mb-3"> 
+            <label for="comment" class="form-label">Comment</label>
+            <input type="text" name="comment" size="50" class="mb-3 form-control" value="Merci de passer récupérer vos identifiants de connexion"><br>
+        </div>
+
+        <input type="submit" value="Envoyer l'email" class="btn btn-primary">
+    </form>
+</div>
+
 
 
 <!-- <!DOCTYPE html>

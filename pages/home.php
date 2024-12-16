@@ -130,7 +130,7 @@ try {
                                 $titreHabitatMarais .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                     <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatMarais"></i></button>
                             </div>
 
@@ -142,7 +142,7 @@ try {
                 
                 <!-- <h3 class="p-3" id="titreDesMarais">
                         LES ANIMAUX DES MARAIS
-                        <div class="inline" data-show="">
+                        <div class="inline" data-show="connected">
                             <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#modificationTexteCards"></i></button>
                         </div>
                 </h3> -->
@@ -163,7 +163,7 @@ try {
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DES_RIVIÈRES_ET_DES_MARAIS/hypopotame-2380601_640.jpg" alt="">
                     
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -184,7 +184,7 @@ try {
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DES_JUNGLES_ET_DES_FORÊTS/koala-2549484_640.jpg" alt="">
                     
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -199,7 +199,7 @@ try {
                                 $titreHabitatForêts .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                 <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatForêts"></i></button>
                             </div>
 
@@ -238,7 +238,7 @@ try {
                                 $titreHabitatPrairie .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                     <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editHabitatPrairies"></i></button>
                             </div>
 
@@ -258,7 +258,7 @@ try {
                 </div>
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DE_LA_SAVANE_ET_DES_PRAIRIES/kangaroos-340287_640.jpg" alt="">
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -280,7 +280,7 @@ try {
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/FondHeroScene.jpg" alt="">
                     
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -294,7 +294,7 @@ try {
                                 $titreServiceRestaurant .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                 <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceRestaurant"></i></button>
                             </div>
 
@@ -328,7 +328,7 @@ try {
                                 $titreServiceVisiteGuideeGratuite .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                     <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceVisiteGuideeGratuite"></i></button>
                             </div>
 
@@ -344,7 +344,7 @@ try {
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/prague-4484518_640.jpg" alt="">
                 
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -366,7 +366,7 @@ try {
                 <div class="col img-card">
                     <img class="w-100 rounded" src="../imgs/huntington-train-2849502_640.jpg" alt="">
                 
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -381,7 +381,7 @@ try {
                                 $titreServiceVisiteSurRails .
                             '</h3>
 
-                            <div class="inline" data-show="">
+                            <div class="inline" data-show="connected">
                                 <button type="button" class="btn btn-outline-primary" id="btnEditIcn"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#editServiceVisiteSurRails"></i></button>
                             </div>
 
@@ -418,7 +418,7 @@ try {
                     <a href="#" id="espece1">
                         <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DES_RIVIÈRES_ET_DES_MARAIS/hypopotame-2380601_640.jpg" id="espece1" alt="">
                     </a>
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -440,7 +440,7 @@ try {
                         <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DES_JUNGLES_ET_DES_FORÊTS/badger-4814484_640.jpg" alt="">
                     </a>
 
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>
@@ -476,7 +476,7 @@ try {
                         <img class="w-100 rounded" src="../imgs/LES_ANIMAUX_DE_LA_SAVANE_ET_DES_PRAIRIES/kangaroos-340287_640.jpg" alt="">
                     </a>
 
-                    <div class="action-image-buttons" data-show="">
+                    <div class="action-image-buttons" data-show="connected">
                         <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"></i></button>
                         <button type="button" onclick = alertclass="btn btn-outline-light"><i class="bi bi-trash" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"></i></button>
                     </div>

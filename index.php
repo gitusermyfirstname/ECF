@@ -72,24 +72,13 @@
                   </li>
 
                   <li class="nav-item">
-                    <!--<a class="nav-link" href="/veterinaire" data-show="disconnected"></a>-->
-                      <select  name="connexionDeLUtilisateur" id="connexionDeLUtilisateur">
+                      <select  name="connexionDeLUtilisateur" id="connexionDeLUtilisateur" data-show="disconnected">
                         <option value="first" selected disabled>Connexion</option>
                         <option value="employe" id="employe">Employe</option>
                         <option value="veterinaire" id="veterinaire">Vétérinaire</option>
                         <option value="admin" id="admin">Admin</option>
                       </select>
-            
                   </li>
-
-                  <!-- <li class="nav-item">
-                    <select class="nav-item" name="db" id="db">
-                      <option class="nav-item"><a class="nav-link" href="/veterinaire" data-show="disconnected">Connexion</option>
-                      <option class="nav-item"><a class="nav-link" href="/veterinaire" data-show="disconnected">Connexion veterinaire</a></option>
-                      <option class="nav-item"><a class="nav-link" href="/employe" data-show="disconnected">Connexion employe</a></option>
-                      <option class="nav-item"><a class="nav-link" href="/admin" data-show="disconnected">Connexion admin</a></option>
-                    </select>
-                  </li> -->
 
                   <li class="nav-item">
                     <button class="nav-link" id="signout-btn" data-show="connected">Déconnexion</a>
@@ -134,7 +123,7 @@
           </form>
 
       </div>
-     
+    
     </div>
   </div>
 </div>
@@ -146,7 +135,7 @@
                     <div class="col-12 col-lg-4">
 
                         <h3 class="text-primary inline">Nos horaires</h3>
-                          <div class="inline action-image-buttons" data-show="">
+                          <div class="inline action-image-buttons" data-show="connected">
                             <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#EditionHoraire"></i></button>
                           </div>
                             <?php
@@ -170,12 +159,16 @@
         </footer>
 
     <script src="js/scriptArcadia.js"></script>
+
+
     <!-- <script src="./pages/admin/js/services/editServices.js"></script> -->
     <script type="module" src="./Router/router.js"></script>
+
     <script src="./bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
          
 </body>
-</html
+</html>
 
 
 

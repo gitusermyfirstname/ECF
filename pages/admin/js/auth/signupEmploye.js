@@ -99,21 +99,12 @@ function validateRequired(input){
 
 function inscrireUtilisateur() {
 
-
 // A )
     // Récupérer les données du formulaire
     // Pour le faire, on untilise l'objet javascript formdata
     // qui est l'objet pour loisiblement, récupérer les données depuis un formulaire, de part les attributs name
 
     const dataform = new FormData(formInscriptionEmploye);
-
-    const leMail = dataform.get("email");
-    setCookie("userMail",leMail,44);
-
-    // const leMail = dataform.get("email");
-
-    // console.log(dataform.get("email"));
-    // debugger;
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -133,17 +124,13 @@ function inscrireUtilisateur() {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow",
-        mode: "*cors",
-redirect: "follow",
-        mode: "*cors"
+        redirect: "follow"
     };
 
     fetch("https://apiecf.alwaysdata.net/api/registration", requestOptions)
     .then(response => {
         
         if (response.ok) {
-
             return response.json();
 
         } else {
@@ -153,23 +140,17 @@ redirect: "follow",
 
     .then(result => {
 
-        const dataform = new FormData(formInscriptionEmploye);
+        //const dataform = new FormData(formInscriptionEmploye);
+
+        const leNom = dataform.get("nom");
+        setCookie("userNom", leNom, 8);
+
         const leMail = dataform.get("email");
-        setCookie("userMail",leMail,44);
-        // const leMail = dataform.get("email");
-        // setCookie("userMail",leMail,44);
-        // document.cookie = "userMail" +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        setCookie("userMail", leMail, 8);
 
-        
-        // console.log(getCookie("userMail"));
-
-        // document.location.href = "/notification";
-
-        //alert("Super, inscription ok");
-
-        //document.location.href = "/notification";
-
-        // document.location.href = "/adminDashBoard";
+        alert("Super, inscription ok");
+        document.location.href = "/signupMail";
+        //window.open("/signupMail", 'Envoie_d_email_a_l\'inscription', 'width=412, height=412');
 
     })
     
